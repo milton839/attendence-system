@@ -16,6 +16,7 @@ const registerController = async (req, res, next) => {
 }
 
 const loginController = async (req, res, next) => {
+    console.log(req.body);
     const { email, password } = req.body;
 
     try {
