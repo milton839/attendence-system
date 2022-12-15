@@ -1,11 +1,13 @@
 const router = require('express').Router();
 const authRoutes = require('./auth');
 const userRoutes = require('./users');
-const adminAttendenceRoutes = require('./adminAttendence');
+const adminAttendanceRoutes = require('./adminAttendence');
+const studentAttendanceRoutes = require('./studentAttendance');
 const authenticate = require('../middleware/authenticate');
 
 router.use('/api/v1/auth', authRoutes);
 router.use('/api/v1/users', authenticate, userRoutes);
-router.use('/api/v1/admin/attendance', authenticate, adminAttendenceRoutes);
+router.use('/api/v1/admin/attendance', authenticate, adminAttendanceRoutes);
+router.use('/api/v1/student/attendance', authenticate, studentAttendanceRoutes);
 
 module.exports = router;
